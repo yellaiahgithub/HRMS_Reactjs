@@ -1,0 +1,217 @@
+.orgTree ul {
+    padding-top: 20px;
+    position: relative;
+  
+    transition: all 0.5s;
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    display: table;
+    margin: 0 auto;
+    /* margin-bottom: 10px; */
+  }
+
+  .orgTree .orgTree ul {
+    display: block;
+    margin:revert;
+    margin-left: auto;
+    margin-right: auto;
+    table-layout: fixed;
+    width: 100%;
+    max-width: max-content;
+  }
+  
+  .orgTree li {
+    float: left;
+    text-align: center;
+    list-style-type: none;
+    position: relative;
+    padding: 20px 5px 0 5px;
+  
+    transition: all 0.5s;
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+  }
+  
+  /*We will use ::before and ::after to draw the connectors*/
+  
+  .orgTree li::before,
+  .orgTree li::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 50%;
+    border-top: 1px solid #ccc;
+    width: 50%;
+    height: 20px;
+  }
+  .orgTree li::after {
+    right: auto;
+    left: 50%;
+    border-left: 1px solid #ccc;
+  }
+  
+  .orgTree li:only-child::after,
+  .orgTree li:only-child::before {
+    display: none;
+  }
+  
+  .orgTree li:only-child {
+    padding-top: 0;
+  }
+  
+  .orgTree li:first-child::before,
+  .orgTree li:last-child::after {
+    border: 0 none;
+  }
+  
+  .orgTree li:last-child::before {
+    border-right: 1px solid #ccc;
+    border-radius: 0 5px 0 0;
+    -webkit-border-radius: 0 5px 0 0;
+    -moz-border-radius: 0 5px 0 0;
+  }
+  .orgTree li:first-child::after {
+    border-radius: 5px 0 0 0;
+    -webkit-border-radius: 5px 0 0 0;
+    -moz-border-radius: 5px 0 0 0;
+  }
+  
+  .orgTree ul ul::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 50%;
+    border-left: 1px solid #ccc;
+    width: 0;
+    height: 20px;
+  }
+  
+  .orgTree li a {
+    border: 1px solid #ccc;
+    padding: 5px 10px;
+    text-decoration: none;
+    color: #666;
+    font-family: arial, verdana, tahoma;
+    font-size: 11px;
+    display: inline-block;
+  
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+  
+    transition: all 0.5s;
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+  }
+  
+  .orgTree li a:hover,
+  .orgTree li a:hover + ul li a {
+    background: #c8e4f8;
+    color: #000;
+    border: 1px solid #94a0b4;
+  }
+  
+  .orgTree li a:hover + ul li::after,
+  .orgTree li a:hover + ul li::before,
+  .orgTree li a:hover + ul::before,
+  .orgTree li a:hover + ul ul::before {
+    border-color: #94a0b4;
+  }
+
+  
+  .card1 {
+    position: relative;
+    padding-top: 10px;
+    width: 300px;
+    /* position: relative;*/
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word; 
+    background-color: #fff;
+    background-clip: border-box;
+    border: 0 solid rgba(122, 123, 151, 0.3);
+    border-radius: 0.65rem;
+    box-shadow: 0 0.46875rem 2.1875rem rgba(59, 62, 102, 0.03), 0 0.9375rem 1.40625rem rgba(59, 62, 102, 0.03), 0 0.25rem 0.53125rem rgba(59, 62, 102, 0.05), 0 0.125rem 0.1875rem rgba(59, 62, 102, 0.03);
+    margin: auto;
+  }
+  
+  .card1 .image {
+    border-radius: 50%;
+    width: 80px;
+    height: 80px;
+    position: absolute;
+    /* left: 107%; */
+    /* transform: translateX(-50%); */
+    top: -10px;
+    padding : 5px;
+  }
+  .card1 .image img {
+    border-radius: 50%;
+    width: 80px;
+    height: 80px;
+    border: 5px solid #96f6b7;
+  }
+  .card1Body {
+    background: #fff;
+    height: auto;
+    max-height: 180px;
+    text-align: center;
+    width: 300px;
+    padding-top: 10px;
+    border-radius: 16px;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    position: relative;
+    /* z-index: 9999; */
+    left: 50%;
+    transform: translateX(-50%);
+    cursor: pointer;
+    min-height: 180px;
+  }
+  
+  .card1Body h6 {
+    font-weight: 600;
+    line-height: 20px;
+    margin-bottom: 1px;
+  }
+  .card1Body p {
+    line-height: 20px;
+    font-size: 14px;
+    margin-bottom: 1px;
+  }
+
+.error {
+  background-color: red;
+}
+
+
+.cardFooter {
+  /* padding: 3px; */
+  background: #96f6b7;
+  text-align: center;
+  bottom: 0;
+  position: relative;
+  /* width: 295px; */
+  border-radius: 11px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+  /* z-index: 9999; */
+  left: 50%;
+  transform: translateX(-50%);
+}
+.cardFooter img {
+  width: 25px;
+  margin: 5px;
+}
+
+.cardFooter p { 
+  margin-bottom: 0;
+  padding: 5px;
+}
+
+@media screen and (max-width: 992px) {
+.orgTree li { 
+  float: inherit;
+}
+}
